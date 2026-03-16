@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UIcss.uss?fileID=7433441132597879392&amp;guid=c99259926e3ad84448e7529e68b4a764&amp;type=3#UIcss"/>
+    <ui:VisualElement name="marker" class="brick" style="flex-grow: 1; width: auto; height: auto; position: absolute; top: auto; left: auto; right: auto; bottom: auto; min-width: 20px; min-height: 20px;"/>
+</ui:UXML>

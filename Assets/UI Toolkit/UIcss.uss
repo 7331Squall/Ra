@@ -1,0 +1,22 @@
+:root {
+}
+
+.brick {
+    border-color: rgb(0, 255, 255);
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+}
+
+.brick:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(255, 255, 0);
+    border-top-width: 1px;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-radius: 8px;
+    padding: 2px;
+    visibility: visible !important;
+}
