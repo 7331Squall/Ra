@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>{{PROJNAME}} {{PROJVER}}</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000; /* cor de fundo */
+        }
+
+        #unity-canvas {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="unity-canvas"></canvas>
+<script>
+    const buildUrl = "Build";
+    const filePrefix = "{{OUTPUT}}"
+    const extension = "{{EXTENSION}}"
+    const loaderUrl = `${buildUrl}/${filePrefix}.loader.js`;
+    const config = {
+        dataUrl: `${buildUrl}/${filePrefix}.data${extension}`,
+        frameworkUrl: `${buildUrl}/${filePrefix}.framework.js${extension}`,
+        codeUrl: `${buildUrl}/${filePrefix}.wasm${extension}`,
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Squack Spencer",
+        productName: "{{PROJNAME}}",
+        productVersion: "{{PROJVER}}",
+        canvas: document.querySelector("#unity-canvas"),
+    };
+
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+        createUnityInstance(config.canvas, config)
+            .then((unityInstance) => {
+                // opcional: guardar referência
+                window.unityInstance = unityInstance;
+            })
+            .catch((message) => {
+                alert(message);
+            });
+    };
+    document.body.appendChild(script);
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.container {
+    padding: 10px;
+    background-image: url("project://database/Assets/Textures/papiro2.png");
+    -unity-slice-type: sliced;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 144px;
+    padding-right: 144px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    min-height: 300px;
+    flex-grow: 0;
+}
+.inputPanel {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: auto;
+    align-items: auto;
+}
+
+.sliderValueText {
+    flex-grow: 1;
+}
+
+.sliderValueText > #unity-text-input {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    font-size: 48px;
+    -unity-font-style: bold;
+}
+
+.closeBtn {
+    background-color: rgb(200, 170, 80);
+    flex-shrink: 1;
+    height: 100%;
+}
+
+.slider {
+    flex-grow: 1;
+    min-height: 56px;
+}
+
+.slider #unity-tracker {
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.slider #unity-dragger {
+    height: 100%;
+    width: 24px;
+    background-color: rgb(200, 170, 80);
+    border-radius: 2px;
+    top: 12px;
+}
+
+.slider #unity-dragger:hover, .closeBtn:hover {
+    background-color: rgb(230, 200, 100);
+}
+
+

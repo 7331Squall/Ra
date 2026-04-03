@@ -1,0 +1,8 @@
+.mirror:hover {
+    border-radius: 5px;
+    border-color: rgb(138, 255, 197);
+    border-top-width: 0;
+    border-right-width: 2px;
+    border-bottom-width: 0;
+    border-left-width: 2px;
+}

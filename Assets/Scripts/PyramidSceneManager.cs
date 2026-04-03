@@ -1,44 +1,55 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PyramidSceneManager : MonoBehaviour {
     public List<Renderer> bricks;
+    public List<Renderer> mirrors;
     public GameObject sunObject;
     public GameObject holeObject;
     public float magnitude = 10.0f;
 
+    public bool IsMirrorAdjusting { get; set; } = false;
+
     LineRenderer _sunRay;
 
     [Header("Sun")]
-    public float latitude = 29.9773036766044f;
-    public SerializableDateTime sunDateTime = new(new DateTime(2026, 06, 21, 11, 24, 00));
+    public float latitude = 22f; //29.9773036766044f;
+    public DateTime SunDateTime = new(2026, 03, 21, 12, 00, 00);
 
     [InspectorButton("UpdateSun", ButtonWidth = 250), SerializeField]
     private bool updateSun;
     bool _shallUpdate;
+    public string pharaoh = "Tutancâmon";
 
     void Awake() {
         sunObject = transform.Find("Sun").gameObject;
         _sunRay = GetComponent<LineRenderer>();
-        PopulateBricks();
+        PopulateLists();
         UpdateSun();
-        if (EditorApplication.isPlaying) _shallUpdate = true;
+        // if (EditorApplication.isPlaying) _shallUpdate = true;
     }
 
-    void PopulateBricks() {
-        bricks.Clear();
+    void PopulateLists() {
+        PopulateList(bricks, "Interactable_Bricks");
+        PopulateList(mirrors, "Interactable_Mirrors");
+    }
 
-        int layer = LayerMask.NameToLayer("Interactable");
+    void PopulateList(List<Renderer> list, string layerName) {
+        list.Clear();
+
+        int layer = LayerMask.NameToLayer(layerName);
 
         Renderer[] all = FindObjectsByType<Renderer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
 
         foreach (var r in all) {
             if (r.gameObject.layer == layer)
-                bricks.Add(r);
+                list.Add(r);
         }
     }
+
 
     void CastSunRay() {
         if (!holeObject) return;
@@ -67,22 +78,43 @@ public class PyramidSceneManager : MonoBehaviour {
 
         _sunRay.positionCount = RayVertexes.Count;
         _sunRay.SetPositions(RayVertexes.ToArray());
-        if (EditorApplication.isPlaying) _shallUpdate = true;
+        // if (EditorApplication.isPlaying) _shallUpdate = true;
     }
 
     void UpdateSun() {
+        (Vector3 position, Quaternion rotation) sunCoords = GPTSolarCalc.GetPositionNOAA(latitude, SunDateTime);
+        //sunCoords.position.z = 0;
+        // sunObject.transform.position = sunCoords.position * magnitude;
+        // sunObject.transform.rotation = sunCoords.rotation;
 
-        (Vector3 position, Quaternion rotation) sunCoords = GPTSolarCalc.GetPositionNOAA(latitude, sunDateTime.Value);
-        sunCoords.position.z = 0;
-        sunObject.transform.position = sunCoords.position * magnitude;
-        sunObject.transform.rotation = sunCoords.rotation;
+        // Vector3 sunDir = sunCoords.position;
+
+// aplica a rotação da pirâmide
+        // sunDir = transform.rotation * sunDir;
+
+        Vector3 sunDir = sunCoords.position;
+
+// Corrige o sistema de coordenadas (Norte → Forward)
+        sunDir = Quaternion.Euler(0, -90, 0) * sunDir;
+
+// Aplica rotação da pirâmide
+// sunDir = transform.rotation * sunDir;
+
+        sunObject.transform.position = sunDir * magnitude;
+        sunObject.transform.rotation = Quaternion.LookRotation(-sunDir, Vector3.up);
+
+        sunObject.transform.position = sunDir * magnitude;
+        sunObject.transform.rotation = Quaternion.LookRotation(-sunDir, Vector3.up);
+
+        Debug.DrawRay(Vector3.zero, sunDir * 10f, Color.yellow);
+
         CastSunRay();
-
     }
 
     public void SelectBrick(Renderer brick) {
         foreach (Renderer i in bricks) {
             i.gameObject.SetActive(i != brick);
+
         }
         holeObject = brick.gameObject;
         UpdateSun();
@@ -90,6 +122,9 @@ public class PyramidSceneManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (_shallUpdate) UpdateSun();
+        // if (_shallUpdate) 
+        UpdateSun();
     }
+
+
 }

@@ -1,0 +1,11 @@
+.compass {
+    flex-grow: 1;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("project://database/Assets/Textures/bussola%202.png?fileID=2800000&guid=5a6df7b46c497894da95fdd92689d26d&type=3#bussola 2");
+    -unity-background-scale-mode: scale-to-fit;
+    left: auto;
+    width: 300px;
+}

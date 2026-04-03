@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_MirrorMarker.uss?fileID=7433441132597879392&amp;guid=9d78de12f99e0de4f8a2eb58432d248f&amp;type=3#CSS_MirrorMarker"/>
+    <ui:VisualElement name="marker" class="mirror"/>
+</ui:UXML>

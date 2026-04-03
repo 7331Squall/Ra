@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_Root.uss?fileID=7433441132597879392&amp;guid=4f4b4dff0d2976a41b217ac009b69833&amp;type=3#CSS_Root"/>
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_Compass.uss?fileID=7433441132597879392&amp;guid=94f6eb64fb1c3234a83a8a6de0eb85dc&amp;type=3#CSS_Compass"/>
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_Statement.uss?fileID=7433441132597879392&amp;guid=50eabcaff4ed92349b6726973707d42b&amp;type=3#CSS_Statement"/>
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_BrickMarker.uss?fileID=7433441132597879392&amp;guid=c99259926e3ad84448e7529e68b4a764&amp;type=3#CSS_BrickMarker"/>
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_MirrorMarker.uss?fileID=7433441132597879392&amp;guid=9d78de12f99e0de4f8a2eb58432d248f&amp;type=3#CSS_MirrorMarker"/>
+</ui:UXML>

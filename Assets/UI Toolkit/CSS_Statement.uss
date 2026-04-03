@@ -1,0 +1,30 @@
+.statement {
+    position: absolute;
+    left: 72px;
+    top: 72px;
+    right: 72px;
+    bottom: 72px;
+    color: rgb(138, 55, 5);
+    -unity-font-style: normal;
+    -unity-text-generator: standard;
+    white-space: normal;
+    text-overflow: ellipsis;
+    -unity-text-align: middle-center;
+    font-size: 24px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 400px;
+    min-height: 450px;
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Textures/papiro2.png?fileID=2800000&guid=f37f9c90dd7764e4e93abda82e28d4e7&type=3#papiro2");
+    -unity-slice-type: tiled;
+    -unity-slice-left: 144;
+    -unity-slice-top: 144;
+    -unity-slice-right: 144;
+    -unity-slice-bottom: 144;
+    -unity-slice-scale: 0.5px;
+}

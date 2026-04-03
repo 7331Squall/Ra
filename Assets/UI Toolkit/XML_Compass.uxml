@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_Compass.uss?fileID=7433441132597879392&amp;guid=94f6eb64fb1c3234a83a8a6de0eb85dc&amp;type=3#CSS_Compass"/>
+    <ui:VisualElement name="compass" class="compass" style="background-image: url(&quot;project://database/Assets/Textures/B%C3%BAssola%20eg%C3%ADpcia%20dourada%20com%20escaravelho.png?fileID=2800000&amp;guid=d50956d95423c514ca11535795f9d8f8&amp;type=3#Bússola egípcia dourada com escaravelho&quot;);"/>
+</ui:UXML>

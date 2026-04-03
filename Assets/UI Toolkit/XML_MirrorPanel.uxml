@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_Root.uss?fileID=7433441132597879392&amp;guid=4f4b4dff0d2976a41b217ac009b69833&amp;type=3#CSS_Root"/>
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_MirrorPanel.uss?fileID=7433441132597879392&amp;guid=f5a43b7ac4f22a643a8c33a4584751d7&amp;type=3#CSS_MirrorPanel"/>
+    <ui:VisualElement name="VisualElement" focusable="false" class="container" style="left: auto; right: auto; align-self: center; min-width: 1000px;">
+        <ui:VisualElement class="inputPanel">
+            <ui:TextField value="0" label="" placeholder-text="" readonly="false" max-length="4" keyboard-type="NumberPad" name="SliderField" class="sliderValueText"/>
+            <ui:Button text="X" name="CloseBtn" class="closeBtn"/>
+        </ui:VisualElement>
+        <ui:Slider label="" value="0" high-value="-180" low-value="180" name="Slider" class="slider"/>
+    </ui:VisualElement>
+</ui:UXML>

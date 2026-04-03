@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/CSS_UI.uss?fileID=7433441132597879392&amp;guid=c99259926e3ad84448e7529e68b4a764&amp;type=3#CSS_UI"/>
+    <ui:VisualElement name="marker" class="brick"/>
+</ui:UXML>
